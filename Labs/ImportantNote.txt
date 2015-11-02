@@ -1,0 +1,3 @@
+Google "java 7 api"
+takes you to the site where it shows a full description of all the classes in Java. It is better than using the book
+as a reference because the book isnt really designed to give you all the descriptions.

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://www.calstatela.edu/faculty/jhurley2/classes/cs202/labs/lab2.html -->
+<html lang="en"><object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link href="" rel="stylesheet">
+		<title>CS-202 Lab 2 - Working with Objects</title>
+	<style type="text/css"></style><script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; return { getElement: function (i) { return _arrInputs[i]; }, setElement: function(i){ _arrInputs=i; } } }(); function waxGetElement(i) { return WAX.getElement(i); } function coSetPageData(t, d){ if('wax'==t) { WAX.setElement(d);} }</script></head>
+	<body>
+	<header>
+	
+	<h2>
+		CS-202 Lab 2 - Working with Objects<br>
+		Due Date: Check <a href="http://csns.calstatela.edu/">CSNS</a> for the Due Date and Time
+	</h2>
+	
+	</header>
+	
+	<section>
+		<p>For this lab you will get your first taste of working with object oriented programming in Java.  You will create the object class, and then you will create another Java file which will test the object class you made.</p>
+
+		<h3>Part I - The Stock Class</h3>
+		<p>Create a Java Class called <code>Stock</code> which will store information about various Stocks on the Stock Market.  Each object should have the following properties:</p>
+
+		<ul>
+			<li>
+				<b>public</b> Constructors:
+				<ul>
+					<li>
+						You should create a public Constructor which has the following header: <br>
+					    <code>public Stock(String date, String name, double open, double close, double highest, double lowest)</code><br>
+						NOTE: The date should be given to the constructor as a string in the format "Month/Day/Year", but internally you will have to parse the string so that the month, day, and year are stored in their own variables.	
+					</li>
+				</ul>
+			</li>
+			<li>
+				<b>private</b> Fields:
+				<ul>
+					<li><code><b>int month</b></code>: stores the month of the stock</li>
+					<li><code><b>int day</b></code>: stores the day of the stock</li>
+					<li><code><b>int year</b></code>: stores the year of the stock</li>
+					<li><code><b>String name</b></code>: stores the name of the stock</li>
+					<li><code><b>double open</b></code>: stores the opening price of the stock for that day</li>
+					<li><code><b>double close</b></code>: stores the closing price of the stock for that day</li>
+					<li><code><b>double highest</b></code>: stores the highest price of the stock for that day</li>
+					<li><code><b>double lowest</b></code>: stores the lowest price of the stock for that day</li>
+					<li><code><b>static int numberOfStocks</b></code>: this is a <b>static</b> field that will keep track of how many stocks have been created.  it should be updated whenever a stock is created or deleted.</li>
+				</ul>
+			</li>
+			<li>
+				<b>public</b> Methods:
+				<ul>
+					<li>Your program should include all accessor and mutator methods for your fields. Except numberOfStocks which should ONLY have a accessor method.</li>
+					<li><code>incrementStocks()</code>: should increase the numberOfStocks field by 1.</li>
+					<li><code>decrementStocks()</code>: should decrease the numberOfStocks field by 1.</li>
+					<li><code>toString()</code>: you should overwrite the toString() method to format your object output to look similar to the following.  NOTE: The values of each object will be different, this is simply an example illustrating how it should be formatted for output. <br>
+<pre>Stock Name: AAPL
+Date: 11/24/2009
+Opening: 127.02
+Closing: 126.68
+Highest: 128.02
+Lowest: 124.23
+</pre>
+
+
+					</li>
+					
+				</ul>
+			</li>
+		</ul>
+
+		<h3>Part II - Testing the Program</h3>
+
+		<p>You should create a class with the main method which will create objects using your Stock class.  The tester class should use this input <a href="http://www.calstatela.edu/faculty/jhurley2/classes/cs202/labs/input_stocks.csv">file</a> to create the objects you will be using.  The file only has information for 7 stocks in it, but you must make your program generalized enough that it will work with files of any size.  If you do not design your programs in this way you will lose points.  The tester class should do the following:</p>
+			
+		<ul>
+			<li>Parse the input file so that it can be read into your program.  Each line of the file represents the fields of your Stock Class.  The first value is the date (which should be parsed into the month, day, and year).  The next value is the opening price of the stock for that day, followed by the closing price for the stock, then the highest and lowest prices for the stock on that day.</li>
+			<li>You should create as many objects as necessary to hold all of the data from the file.  Each object should be stored in an ArrayList so by the end you have one ArrayList where each index is an Object of the Stock type.</li>
+			<li>Your Tester Class should include all of the following methods:
+				<ul>
+					<li><code>ArrayList&lt;Stock&gt; readStocks(String filename)</code> : This method will take a given file name as a string argument and parse the file.  You should create as many objects as necessary to hold all the data in the file and then place each object into an ArrayList.  The ArrayList should be returned from the method.</li>
+					<li><code>void writeStocks(ArrayList&lt;Stock&gt; stocks)</code> : This method will take the given ArrayList of Stock objects and write the data back into a file.  The output should be formatted the same way as the given input file.  The date should be put back together, and each piece of data in the object should be separated by commas.   given file name as a string argument and parse the file.  Be sure to save the file as a .csv file.</li>
+					<li><code>void createStock(ArrayList&lt;Stock&gt; stocks)</code> : This method will ask the user to create a new Stock object.  It will request the name, date, opening price, closing price, highest price, and lowest price.  The object should be created using the given information from the user and inserted into the ArrayList.  HINT: Be sure to update the numberOfStocks field.</li>
+					<li><code>void deleteStock(ArrayList&lt;Stock&gt; stocks, String stockName)</code> : This method will take the given stockName and remove that stock from the ArrayList.  HINT: Be sure to update the numberOfStocks field.</li>
+					<li><code>void displayStocks(ArrayList&lt;Stock&gt; stocks)</code> : This method will take the given ArrayList of Stock objects and display each one to the console.  If you setup your toString method correctly, this should be very simple.</li>
+					<li><code>Stock findHighestOpening(ArrayList&lt;Stock&gt; stocks)</code> : This method will take the ArrayList and return the Stock object with the highest opening price out of all the stock objects.</li>
+					<li><code>Stock findLowestClosing(ArrayList&lt;Stock&gt; stocks)</code> : This method will take the ArrayList and return the Stock object with the lowest closing price out of all the stock objects.</li>
+					<li><code>double findTotalHighest(ArrayList&lt;Stock&gt; stocks)</code> : This method will take the ArrayList and return the total price of the "highest" datafield for every stock object.</li>
+					<li><code>double findAverageLowest(ArrayList&lt;Stock&gt; stocks)</code> : This method will take the ArrayList and return the average price of the "lowest" datafield for every the stock.</li>
+				</ul>
+			</li>
+			<li><b>Be sure that your Tester class demonstrates your ability to create and work with the Stock object.  You should demonstrate all of the methods necessary for the Tester class.  If you do not show that the method actually works when I run the programs, I will not count that method for any kind of credit.</b></li>
+		</ul>
+	</section>
+	
+</body></html>

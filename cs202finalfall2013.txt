@@ -1,0 +1,259 @@
+CS 202 Final Exam, Fall 2013
+
+The rules for this exam are:
+
+-You may consult the lecture notes, textbook, your own notes, or any internet source that does not involve another human being giving you 
+answers or hints. Some questions may involve copying sample code or partial applications, but you may never copy text 
+form any source and present it as your own work.
+
+-You may not communicate with another human being other than John, Keenan, or someone we designate.
+
+-You may ask us for clarification or point out possible errors in exam questions, but do not ask us for hints.  There is no way to give hints fairly.
+
+
+Section 1, Short Answers
+4 points each
+
+Give a complete answer to each question.  The length of your answer will vary from question to question, 
+but should never be more than a few sentences.
+
+1. Is System.out.println() static?  How do you know?
+	--No because the "println()" method is not a static method but rather an instance method on a static field.
+	  this allows for it to be used not only in public methods but also in private ones.
+
+2. Why are primitive data types like int passed by value in Java?
+	--Primitive data types are passed by value because they are often straightforward (don't contain much complicated data) and because they are primitive
+	  Java does not waste much memory when it "copies" these values from one method to another. Only objects (such as Strings or arrays)
+	  are passed differently by something known as pass reference by value.
+
+
+3. (This question is identical to one that appeared on the practice final.  Feel free to reuse your 
+answer if you think it is good.) Why was it so important to measure the number of comparisons and 
+swaps in the sorting algorithms we studied in week 3?
+	--To test and see the efficiancy between the different sorting algorithms
+
+The next two questions refer to this class hierarchy:
+		
+					  Instrument
+				/					\
+		StringedInstrument	     BrassInstrument
+		/			\				/			\
+	Bass			Violin		  Tuba		FrenchHorn	
+
+4. Should BrassInstrument be an abstract class?  Why or why not?
+	--It should be if you were to write a method that states that all the specific instruments make a distinct musical sound. If this were the case,
+	  then the BrassIntrument class, along with a couple other classes, would all need to be abstract.
+
+5. All four of the specific instruments listed need to be tuned, but the tuning is done differently 
+for stringed instruments than for brass instruments.  Other objects will need to call the tune() 
+method in the same way for all instruments.  How would you handle this?
+	--I would make the Instrument abstract and then define the tune() method differently and accordingly in the StringedInstrument and BrassInstrument
+	  classes.
+
+6. Suppose CanadaGoose is a subclass of Goose, and both are concrete classes.  What is wrong 
+with the code below?
+
+List<CanadaGoose> geese = new ArrayList<CanadaGoose>();
+Goose susie = new Goose();
+geese.add(susie);
+
+	--The problem here is that the object "geese", which is made from the class subclass "CanadaGoose", is trying to add the object
+	  "susie", which is made from the super class of "CanadaGoose", to its list. It would be wrong to make an object of Goose and add it to an 
+	  object of CanadaGoose because "Goose" is the super class of "CanadaGoose". This means that all the methods in "CanadaGoose" would not be the 
+	  same as all the methods in "Goose".
+
+7. Consider this Java interface:
+
+public interface Waterfowl {
+	public String getCall();
+	public void setSummerLocation(String location);
+	public void setWinterLocation(String location);
+	public String getLocation();
+	public void migrate();
+}
+
+Write one class that implements this interface for a Mallard Duck.  You may represent the animal's 
+call as a String which can be accessed with the getCall method.  A Mallard's call would be represented 
+by the String "quack."  Locations can also be represented by Strings.  migrate() causes the bird to 
+move from its summer location to its winter location, or vice versa.  The summer and winter locations 
+may also be represented by Strings, such as "Alaska" and "California".
+
+	public class MallardDuck implements Waterfowl{
+	
+		private String call;
+		private String location;
+		private String winterLocation;
+		private String summerLocation;
+		
+		public MallardDuck(String call, String location, String winterLocation, String summerLocation){
+			this.call = call;
+			this.location = location;
+			this.winterLocation = winterLocation;
+			this.summerLocation = summerLocation;
+		}
+		
+		public void location(String location){
+			this.location = location
+		}
+		
+		@Override
+		public String getCall(){
+			return call;
+		}
+		
+		@Override
+		public void setSummerLocation(String location){
+			summerLocation = location;
+		}
+		
+		@Override
+		public void setWinterLocation(String location){
+			winterLocation = location
+		}
+		
+		@Override
+		public String getLocation(){
+			return location
+		}
+		
+		@Override
+		public void migrate(){
+			if(location.equals(summerLocation)){
+				setLocation(winterLocation);
+			}
+			if(location.equals(winterLocation)){
+				setLocation(summerLocation);
+			}
+		}
+		
+	}
+
+8. Suppose you have a JButton called jb.  Write a call to jb.addActionListener() that adds an 
+anonymous ActionListener whose actionPerformed() calls a method named showOpenDialog().  You do 
+not need to actually write the showOpenDialog() method.
+
+	jb.addActionListener(new sOD());
+	
+	private class sOD implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent event) {
+			showOpenDialog();
+		}
+	}
+
+9. Why are syntax errors less troublesome than logic errors?
+	--Because syntax errors are usually always caught by Eclipse will not let you run the program if you try 
+	  to do so.
+
+10. Why do we make a distinction between runtime errors and exceptions?
+	--because it allows to better make our programs by using exceptions to "catch" any of the runtime errors that could possibly be made.\
+	  It makes are programs more efficient.
+
+11. What is a stack overflow?
+	--a stack overflow is when the stack pointer exceeds the stack bound. This generally tends to happen when a program attempts to use 
+	  more space than is available on the call stack
+
+12. How can you tell if a class is an inner class, assuming you have its source code?
+	--because you'll be able to see when the class is being made and where its being used. A perfect example is when you try to make your
+	  own action listeners for buttons when using GUIs.
+
+13. Consider the Celsius-to-Fahrenheit example from lecture 10.  Why did I create a separate class with 
+a method for the calculations, rather than performing them in the ActionListener?
+	--Because when we need to change the handling code, it is easier to work with if it is not mixed with Action Listeners and GUI code.
+	  And because it's hard to unit test GUIs, so its better to get the code that might have subtle bugs away from the GUI.
+
+14. Why did we have to cover the basics of Object Oriented Programming before studying GUIs?
+	--Because rely heavily on object oriented programming. In order to truly understand how GUIs actually function, a basic knowledge
+	  of object oriented programming was needed.
+
+Section 2: One-paragraph answer, 14 points
+Write a well-constructed paragraph that answers the question.  A well-constructed paragraph contains an 
+introductory sentence stating your main thesis, several sentences providing examples or making specific 
+points that support your argument, and a concluding sentence summing up your argument.
+
+15. Why does Java use "pass reference by value" instead of "pass by value" when we send objects as 
+arguments to methods?
+	--In some other programming languages, you can choose whether to pass a parameter by value or by reference; In Java, you do not get a choice.  
+	  Unlike primitive data types, if the value is an object (such as a String or an array), the value passed is a reference to the
+	  memory location where an the object is stored. The new method then knows where to find the original object. Doing this saves memory
+	  because it is not necessary to copy all the data in the object. In additioin, unlike primitive data types, any changes to the object that 
+	  occur inside the method body will affect the original object. This should be called "passing by reference" however Java calls it "passing reference
+	  by value" because thats how it was made.
+
+
+Section 3: Coding Question, 30 points
+
+Write a Java application that meets the specifications given in each question.  Make sure your application compiles and runs correctly.  Turn in the
+.java files in the same CSNS link as the rest of the exam.
+
+16. Consider the class SimulatorImpl, which is not the same as the Simulators used in the midterm
+or lectures:
+
+import java.util.Random;
+
+public class SimulatorImpl implements Simulator {
+	/* a more complex example would check for many possible exceptions, for example if min > max!*/
+	
+	@Override
+	public double[] getGaussianDoubles(double mean, double std, int count, double min, double max) {
+		double[] nums = new double[count];
+		Random r = new Random();
+		double randDoub;
+		for (int counter = 0; counter < nums.length; counter++){
+			randDoub = r.nextGaussian() * std + mean;
+			// it's pretty hard to set limits for the values in a good way, so here is a hacky way.
+			if(randDoub > max) randDoub = max;
+			if(randDoub < min) randDoub = min;
+			nums[counter] = randDoub;
+		}
+		return nums;
+	}
+		
+	@Override
+	public int[] getLinearInts(int count, int min, int max) {
+		int[] nums = new int[count];
+		Random r = new Random();
+		int randInt;
+		for (int counter = 0; counter < nums.length; counter++){
+			randInt = r.nextInt(count) + min;
+			nums[counter] = randInt;					
+		}
+		return nums;
+	}
+		
+	@Override
+	public boolean[] getBooleans(int count, double proportionTrue){
+		Random r = new Random();
+		boolean[] vals = new boolean[count];
+		
+		for(int counter = 0; counter < vals.length; counter++)
+			vals[counter]=(Math.abs(r.nextDouble())<= proportionTrue);
+		return vals;
+	}
+}
+
+Part a) (2 points) Write a public interface called Simulator that specifies that implementing classes 
+must contain the public methods used in SimulatorImpl. 
+
+Part b) (23 points) Write a class called CrazySimulator that implements the Simulator interface
+this way:
+
+getGaussianDoubles() returns an array of doubles of which half are equal to (mean + standard deviation) 
+and the other half equal to (mean - standard deviation).  If the count is odd (that is, if 
+count % 2 == 1), just make the first value exactly mean and then split the rest of the array.
+
+getLinearInts() works as follows:
+If min + count - 1 is no greater than max, counts from min to min + count - 1.  Else, counts
+from min to max repeatedly, resetting to min after each time it reaches max.
+
+getBooleans() finds the number of values that will be true and returns that number of trues 
+followed by the correct number of falses.  You may encounter some rounding error.
+
+Use either a JUnit test case or a driver class for testing while you are working
+on this class.  You will not be graded on the driver or tester, and I recommend that 
+you do not test for correct standard deviations unless you have plenty of time.
+
+Part c) (5 points) Answer in one or two sentences: 
+Why is it better in a real application to write code that refers to the interface Simulator rather 
+than to the classes CrazySimulator or SimulatorImpl?
+--Because Simulator is the head class that defines methods that any class that implements it should have

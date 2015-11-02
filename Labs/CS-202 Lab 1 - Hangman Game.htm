@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://www.calstatela.edu/faculty/jhurley2/classes/cs202/labs/lab1.html -->
+<html lang="en"><object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link href="" rel="stylesheet">
+		<title>CS-202 Lab 1 - Hangman Game</title>
+	<style type="text/css"></style><script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; window.addEventListener('waxSetArr', function(evt) {_arrInputs=evt.detail;}); return { getElement: function (i) { return _arrInputs[i]; } } }(); function waxGetElement(i) { return WAX.getElement(i); }</script></head>
+	<body>
+	<header>
+	
+	<h2>
+		CS-202 Lab 1 - Hangman Game<br>
+		Due Date: Check <a href="http://csns.calstatela.edu/">CSNS</a> for the Due Date and Time
+	</h2>
+	
+	</header>
+	
+	<section>
+		<p>For the lab project this week, you will design a computer program which allows a user to play a game of Hangman.  If you are unfamiliar with this game check out this <a href="http://en.wikipedia.org/wiki/Hangman_%28game%29">Wikipedia Article</a> on it.  You will be making use of everything that you learned in CS-201 to complete this assignment.  Your program should allow a user to play a single player version of the game.</p>
+	
+		<h3>Part I - Creating the Input File</h3>
+		<ul>
+			<li>Start by choosing a category or topic.  Choose something simple that has a lot of words associated with it. For example you might choose a category such as "Food" or "Animals" or "Colors"</li>
+			<li>Once you have your category, choose 30 unique words that relate to that category.</li>
+			<li>Create a text file which has the following structure: 
+				<ul>
+					<li>The first word in the text file should be the category.</li>
+					<li>The rest of the document should consist of the 30 words related to that category listed one word per line.</li>
+				</ul>
+			</li>
+			<li>If you chose the category "Animal" your text file might look something like this:<br>
+		<pre>Animal
+Bear
+Dog
+Tiger
+Monkey
+Cat
+...
+		</pre>
+			</li>
+		</ul>
+
+		<h3>Part II - Choosing the Guessing Word</h3>
+		<ul>
+			<li>Using the input file you created in part I, read the category into a variable to be used later.</li>
+			<li>Read the rest of the words into an array large enough to hold every word.</li>
+			<li>Randomly choose a word from the array.  This word will become the word that the user has to try and guess correctly to win the game.  This word must be split up into individual letters and stored in an array in the correct order.  The array should be big enough to hold the entire word.</li>
+		</ul>
+
+		<h3>Part III - Setting up the Hangman Picture</h3>
+		<ul>
+			<li>The ascii pictures which represent the Hangman can be stored as 2D arrays.  These 2D arrays should each be stored inside of another one dimensional array. </li>
+			<li>I'll leave it up to you to figure out how to populate the array, how big the array should be, and how to change the array around when the user makes an incorrect guess.</li>
+			<li>NOTE: It would be extremely helpful to draw this out on paper to get an idea of how to internally represent the picture.</li>
+			<li>The following is the sequence of pictures that your game will go through.  Everytime a user guesses the wrong letter the next piece of the picture should be added:
+			<pre>  +---+
+      |
+      |
+      |
+      |
+      |
+=========
+
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========
+
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+
+			</pre>
+			</li>
+		</ul>
+
+		<h3>Part IV: Playing the Game</h3>
+		<ul>
+			<li>Once the game has been setup and is ready to go, the user is ready to start playing.</li>
+			<li>Repeat the following until the user wins or loses the game:
+				<ul>
+					<li>Display the correct version of the ascii art.</li>
+					<li>Display the category.</li>
+					<li>Display a list of incorrect letters that the user has already guessed.  (This will be empty on the first turn.)</li>
+					<li>Display the placeholders for the letters in the word to be guessed.  For example, if the word that the user must guess has 7 letters in it, then you might represent the placeholders with seven underscores.  These will be "filled in" as the user guesses the letters correctly. NOTE: You must use an array of characters to store the placeholders and the "filled in" letters.</li>
+					<li>Prompt the user to guess a letter in the word.</li>
+					<li>If the user guesses the letter correctly, fill in all the positions in the word where that letter appears.</li>
+					<li>If the user guesses the letter incorrectly, this incorrect letter should be added to the list of incorrect letters.  NOTE: You must use an array to store the incorrect letters.  Also, when the user guesses a letter incorrectly the picture should be updated to the next picture in sequence.</li>
+				</ul>
+			</li>
+			<li>The game ends if the user guesses the word correctly (winning condition), or when the last picture has been reached (losing condition).  Display a message to the user saying whether they won or lost.</li>
+		</ul>
+
+		<p>NOTE: You should make use of very good programming skills to complete this assignment.  You should use methods, arrays, loops, variables, if/else structures, etc.  Also, you may need to find the length of a string.  Java has a built in function which allows you to do this.  If I have a String variable called string1, you can find its length by using the built-in length() method.  This would look something like <code> string1.length() </code> which returns the number of characters in the string.</p>
+
+		<p>NOTE: You may wish to use more arrays than the ones that are required.  This is up to you.  As long as you follow the requirements of the directions, you have free reign to design the program as you see fit.</p>
+
+		<p>NOTE: Individual characters in a string can be accessed in a way similar to the indexes of an array.  Run the following code example to see what it prints.  The characters in a string start from index 0 just like an array.  Remember that the charAt() method returns a char type and NOT a string type.
+		</p><pre>		string1 = "elephant";
+		System.out.println(string1.charAt(0));
+		System.out.println(string1.charAt(4));
+		System.out.println(string1.charAt(7));
+		</pre>
+		<p></p>
+
+		<h3>Sample Run:</h3>
+		<p>For this example the computer has randomly picked the word elephant for the user to try and guess.</p>
+	
+		<pre>Welcome to Hangman!
+
+  +---+
+      |
+      |
+      |
+      |
+      |
+=========
+
+Category: Animals
+
+Incorrect Letters: 
+
+_ _ _ _ _ _ _ _
+
+Please guess a letter: j
+
+Incorrect Guess!
+
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+
+Category: Animals
+
+Incorrect Letters: j
+
+_ _ _ _ _ _ _ _
+
+Please guess a letter: e
+
+Good guess!
+
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+
+Category: Animals
+
+Incorrect Letters: j
+
+e _ e _ _ _ _ _
+
+Please guess a letter: b
+
+Incorrect guess!
+
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+
+Category: Animals
+
+Incorrect Letters: j, b
+
+e _ e _ _ _ _ _
+
+Please guess a letter: x
+
+Incorrect guess!
+
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+
+Category: Animals
+
+Incorrect Letters: j, b, x
+
+e _ e _ _ _ _ _
+
+Please guess a letter: l
+
+Good guess!
+
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+
+Category: Animals
+
+Incorrect Letters: j, b, x
+
+e l e _ _ _ _ _
+
+Please guess a letter: g
+
+Incorrect guess!
+
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========
+
+Category: Animals
+
+Incorrect Letters: j, b, x, g
+
+e l e _ _ _ _ _
+
+Please guess a letter: f
+
+Incorrect guess!
+
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+
+Category: Animals
+
+Incorrect Letters: j, b, x, g, f
+
+e l e _ _ _ _ _
+
+Please guess a letter: t
+
+Good guess!
+
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+
+Category: Animals
+
+Incorrect Letters: j, b, x, g, f
+
+e l e _ _ _ _ t
+
+Please guess a letter: z
+
+Incorrect guess!
+
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+
+Category: Animals
+
+Incorrect Letters: j, b, x, g, f, z
+
+e l e _ _ _ _ t
+
+Please guess a letter: y
+
+Incorrect guess!
+
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+
+I'm sorry! The correct word was elephant.  You have lost the game!
+
+		</pre>
+
+
+
+
+</section>
+	
+</body></html>

@@ -1,0 +1,171 @@
+CS 202 Practice Final, Fall 2013
+
+The rules for this exam are:
+
+-You may consult the lecture notes, textbook, your own notes, or any internet source that does not involve another human being giving you 
+answers or hints. Some questions may involve copying sample code or partial applications, but you may never copy text 
+form any source and present it as your own work.
+
+-You may not communicate with another human being other than John, Keenan, or someone we designate.
+
+-You may ask us for clarification or point out possible errors in exam questions, but do not ask us for hints.  There is no way to give hints fairly.
+
+
+Section 1, Short Answers
+4 points each
+
+Give a complete answer to each question.  The length of your answer will vary from question to question, but should
+never be more than a few sentences.
+
+1. Are JUnit's assertion methods (like assertThat()) static?  How do you know? 
+	-Yes they are because unit testing is not neccesarily meant for private methods.
+
+2. Why was it so important to measure the number of comparisons and swaps in the sorting algorithms we studied in week 3?
+	-To test and see the efficiancy between the different sorting algorithms
+
+3. Suppose you need to guess a number between 0 and 10.  You decide to approach this problems by making a series of guesses and, in each case, 
+asking whether your guess is correct, too high, or too low, and, whenever the guess is not correct, guessing in the middle of the remaining range.
+In the *worst* case, how many guesses will you have to make before you arrive at the correct answer?  
+	-10
+
+The next few questions refer to the following class hierarchy:
+		
+				  Waterfowl
+				/		    \	
+		Duck		           Goose
+		/	\				 /       \
+ Mallard    Teal	   CanadaGoose  Cackling Goose		
+
+Each class extends the class above it, so that, for example, Duck is a subclass of Waterfowl.
+ 
+4. Every type of waterfowl has a call (a distinctive vocal sound), but the calls are different.  Mallards quack, Teal whistle, Canada Geese honk, and 
+Cackling Geese cackle.  You will write methods in other classes that cause waterfowl to emit the correct calls and must work equally well with each 
+class in the hierarchy.  How would you use inheritance to handle this in your classes?
+	--I would make the Waterfowl, Duck, and Goose classes abstract because the children classes all make vocal calls
+
+5. You discover that your application must deal with two different types of Teal, Green-Winged Teal and Blue-Winged Teal.  They make the same sound but differ
+in color and some other characteristics.  How would you handle this?
+	--I would make the teal an abstract class along with the other mentioned in the previous problem
+
+6. Your application requires a Flock class (a flock is a group of ducks or geese eating, nesting, or flying together).  A Flock might contain Mallards,
+Teal, either type of goose, or a combination of both types of goose.  How would your Flock class keep track of the individual Waterfowl?
+
+7. Suppose you decide to make Waterfowl an interface instead of a class.  Write an Waterfowl interface that declares three methods you would want
+all Waterfowl to implement.
+
+8.  The following code contains a class definition.  
+   
+btn.addActionListener(new ActionListener( ) {
+    public void actionPerformed(final ActionEvent event) {
+       Toolkit.getDefaultToolkit().beep( );
+    }
+});
+
+a) What interface is implemented by the class that is created?
+	--ActionListener
+b) What is the name for a class that is created this way, and what is the reason for this name?
+	--Listener classes
+   
+	   
+9. What are advantages of unit testing over simply running your program and providing various inputs to see if everything works?
+
+10. Consider this code, which also appeared on the midterm:
+
+private static String[] months = { "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+			"JUL", "AUG", "SEP", "OCT", "NOV", "DEC" };
+
+	public static void main(String[] args) {
+		for (String m : months)
+			for (int day = 1; day <= 31; day++)
+				System.out.println(m + "/" + day + "/" + "2013");
+	}
+
+According to Horstmann's textbook, there are two basic types of errors: syntax/compiletime and logic/runtime.  In my lecture, I
+distinguished three types of errors, syntax/compiletime, runtime, and logic.
+
+a) How would the error in the code above be categorized by Horstmann?
+	--logic/runtime
+b) How would it be categorized in the three-type system?
+	--logic
+
+11. Suppose you write file i/o code using an input stream inside a try...catch structure.  The code that closes the stream should be in
+a __Finally__ block.    
+
+11. Consider the recursive algorithms for going home and for calculating a factorial in lecture 10.  Using pseudocode, write a recursive algorithm for 
+reading a book.
+
+12. Why don't we have to write the code to define the shape and color of a JButton?
+
+13. Suppose you enable multiple file selections with a JFileChooser.  What is the return type of getSelectedFiles()? 
+
+14. Consider the following code:
+
+
+package guidemo;
+
+import java.awt.BorderLayout;
+import java.util.Date;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class GUIExample {
+	JFrame frame;
+	JButton button;
+	
+	private void setUpGUI() {
+		frame = new JFrame("Button Demo");		
+		button = new JButton("Click Me");
+		frame.add(button, BorderLayout.CENTER);
+/*
+ * add your code here
+ * 
+ * 
+ * 
+ * */		button.addActionListener(new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Date and Time: " + new Date(e.getWhen()));
+			}
+		});
+
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
+		frame.setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		GUIExample gui = new GUIExample();
+		gui.setUpGUI();
+	};
+}
+
+
+For an Event called e, you can get the date and time the Event occurred by instantiating a new Date object using the Event's getWhen() method this way:
+new Date(event.getWhen()));
+
+Add code to the GUIExample class to show a JOptionPane.showMessageDialog that displays the time and date whenever the button is clicked.  You will need 
+additional imports, which can usually be generated automatically by Eclipse when you hit control-shift-o
+
+15. Suppose you write a method that takes a JTable as a parameter.  When the method is called, does it receive a copy of the JTable or a copy of the memory 
+address of the JTable?  How do you know?
+
+Section 2: One-paragraph answer, 10 points
+Write a well-constructed paragraph that answers the question.  A well-constructed paragraph contains an introductory sentence stating your main 
+thesis, several sentences providing examples or making specific points that support your argument, and a concluding sentence summing up your argument.  
+You will lose points on this question if you do not write a good paragraph.
+
+16.  How does object-oriented programming differ from procedural programming (the kind of programming you did in CS201)?
+
+
+Section 3: Coding Question, 30 points each
+
+Write a Java application that meets the specifications given in each question.  Make sure your application compiles and runs correctly.  Turn in the
+.java files in the same CSNS link as the rest of the exam.
+
+
+17.  Write an application that calculates the area of a circle with a radius taken from input.  Use a GUI with a JTextField for input and a JButton.
+When the button is clicked, the calculation is performed and the answer is output to another JTextField.  Perform the calculations using a separate class 
+that does not contain any GUI code.
+

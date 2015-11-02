@@ -1,0 +1,254 @@
+CS 202 Midterm, Fall 2013
+
+The rules for this exam are:
+
+-You may consult the lecture notes, textbook, your own notes, or any internet source that does not involve another human being giving you 
+answers or hints. Some questions may involve copying sample code or partial applications, but you may never copy text 
+form any source and present it as your own work.
+
+-You may not communicate with another human being other than John, Keenan, or someone we designate.
+
+-You may ask us for clarification or point out possible errors in exam questions, but do not ask us for hints.  There is no way to do that fairly.
+
+
+Section 1, Short Answers
+4 points each
+
+Give a complete answer to each question.  The length of your answer will vary from question to question, but should
+never be more than a few sentences.
+
+1. (This question is identical to one from the practice midterm.  If you like your answer from the practice midterm, feel free to reuse it.
+If you didn't pay attention to the practice exam, ha!) 
+Why are getters public?
+	--Because they allow us to see or change the private data from the instance variables
+
+2. Why don't we just use static methods and data for everything?
+	--We don't use static methods and data for everything because they dont allow the use of instance variables which are extremely helpful
+	  when wanting to create more complicated and efficient programs.
+
+3. Consider this code:
+
+	private static String[] months = { "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+			"JUL", "AUG", "SEP", "OCT", "NOV", "DEC" };
+
+	public static void main(String[] args) {
+		for (String m : months)
+			for (int day = 1; day <= 31; day++)
+				System.out.println(m + "/" + day + "/" + "2013");
+	}
+
+	Assume you paste this code into a correctly-written class.
+	
+	a (1 point) How many times does the System.out.println run? 
+		--31 times for each month of the year
+	b (1 point) Does this code contain any syntax errors?
+		--No it does not.
+	c (1 point) Does this code contain any runtime errors (ie, does it crash when it runs?)
+		--No it does not. It should run perfectly without runtime errors according to how the code was written.
+
+4. Consider the Borg example from lecture 5.  When we run stateName(), part of the output is the borgCount.  We get the same borgCount 
+regardless of which Borg we ask.  Why is that?
+	--Because the borgcount is static
+
+5. What does it mean to say that constructors may be overloaded?
+	--It's similar to how methods are overloaded. You can have more than one constructor that take in different input.
+
+6. Explain *in your own words* why the lowest possible value for a Java int is about negative 2 billion. 
+	--Because Java has a arranged it so that an integer can only contain values between -2^31 and 2^31 - 1. 
+	  -2^31 is approximately about negative 2 billion.
+
+7. Consider the following code, which is *not* identical to the code in the similar question on the practice exam: 
+		double d1 = .05/.11;
+		double d2 = 5;
+		double d3 = 11;
+		double d4 = d2/d3;
+		System.out.println(d1 == d4);
+
+In normal arithmetic, 5/11 is equal to .05/.11, yet the output from this code is "false."  What went wrong?
+	--doubles are stored with limited precision, and the quotients in the two division problems were rounded differently. 
+	  This would almost never be foreseeable
+
+
+The next few questions refer to the class Goose:
+
+public class Goose {
+	private double weightInKg;
+	
+	// place where the goose spends the summer, eg Alaska
+	private String summerLocation;
+	
+	// place where the goose spends the winter, eg California
+	private String winterLocation;
+	
+	public void setWeightInKg(double weightInKg){
+		this.weightInKg = weightInKg;		
+	}	
+}
+
+8. Write a reasonable toString() method for Goose, with a correct method signature.
+	public String toString(){
+		return "The goose weighs " + weightInKg + "kg\n" + "The goose spends the summer in " + summerLocation + " and spends the winter in " + winterLocation;
+	}
+
+9. Why is the keyword "this" on the left-hand side of the assignment in setWeightInKg, rather than on the right-hand side?
+	--Because the program is making the instance variable equal the value of the recieved input. Because the "instance variable and the 
+	  variable that represents the user given input are named the same, "this" is used on the instance variable so that program 
+	  is able to diferentiate between the two.
+
+10. Consider this line of code, which would probably be in some class other than Goose:
+private Goose goose;
+If we pass goose to a method as an argument, will we pass a copy of goose or the value of a reference to it?  How do you know?
+	--We will pass the value of a reference to it because in order for us to make a legitimate copy of goose we would have to use the clone() method.  
+
+
+11. Consider this code:
+	public static void main(String args[]) {
+		int myInt = 5;
+		change(5);
+		// consider the value of myInt at this point
+	}
+	
+	public static void change(int myInt){
+		myInt = 6;		
+	}
+
+Does change() affect the value myInt has when the last line of main() is reached?  Why or why not?
+	--No it does not because the change() method did not do anything with the value of myInt it was referring to.
+	  If we were to add "System.out.prinln(myInt)" in the change() method, then the value of myInt when the last line of main() is reached
+	  would have printed "6".
+
+
+12. What does it mean to say that, in Java, an object is an instance of a class?
+	--In Java, an object is created based on the constants, variables, and methods defined in a class.
+
+The next several questions refer to the following class hierarchy:
+					 Animal
+		/				|				  \
+	Pet				   Pest				  Food			
+   /   \			  / 	\			/		\
+Dog	   Cat			Rat		Ant		Waterfowl	Cattle	
+									/	\
+								Duck	Goose
+									
+Pet, Pest, and Food are subclasses of Animal.  Dog and Cat are subclasses of Pet, Rat and Ant are subclasses of Pest, Waterfowl 
+and Cattle are subclasses of Food, and Duck and Goose are subclasses of Waterfowl.  Suppose this hierarchy describes all the 
+animals in the world, and furthermore that you are not going to write any further subclasses.  
+
+13. Which classes in this hierarchy should be abstract and why?
+	--Food and Waterfowl would be abstract classes because in general, the animals we use as food are all similarly caught, killed, and cooked
+	only its done in slightly different ways. Using abstract on these classes would be the most ideal.
+	Animal, pet, and pest should also be abstract.
+
+14. Describe a method that you would declare as an abstract method at some point in this class hierarchy.
+	--In the food class, the following abstractmethos can be written:
+		protected abstract void cook(int temperatureInCelcius, String methodOfCook);
+	(by "methodOfCook" I mean how will it be cooked? fried, grilled, etc)
+
+15. Describe a method that you would code in Pet, rather than in Animal or in Dog or Cat.
+	--
+	public void register(){
+		//this method would register the pet at the veterinarian's office after getting its very first shots 
+	}
+
+
+16. Consider this code:
+    List<Integer> myList = new ArrayList<Integer>();
+	  
+List is an interface, and ArrayList is a concrete class.  Why is it a good idea to give myList the data type List instead of ArrayList?
+	--It allows the programmer to more easily add objects of any class that implements the interface List.
+
+17. It is OK to make a variable refer to an instance of a subclass of its type, but not to make a variable refer to an instance of a superclass 
+	of its type.  Why is this?
+	--Because it is only possible for the instance varible to be refered to in the class that it was created in and any of its subclasses (if it has any)
+	  It couldnt refered to in its supeclass because it wasnt defined at that point. in other words, the instance variabe wouldnt exist in the super class.
+	
+	
+Section 2: Coding Question, 32 points
+Write a Java application that meets the following specifications.  Make sure your application compiles and runs correctly.  Turn in the
+.java files in the same CSNS link as the rest of the exam.
+
+18.  Write an application that creates simulated values for students in a section.  Start with the Simulator and Student classes given below.	
+Then write a driver/tester class that does the following:
+
+-Creates an array list of Students
+-Uses the simulator to create arrays of gpas, ages, and genders for Students.  Gender is tracked by a boolean variable that indicates whether the 
+Student is male.  GPAs are doubles that are supplied by the getGaussianData() method, with average GPA of 3.0 and standard deviation of 0.5.  Minimum 
+and maximum GPAs should be set to the correct values.  The section should have 40 students, of whom 60% are male.  These values should be supplied by
+Simulator.getBooleans().  Ages should have a Gaussian (normal) distribution with average = 23, standard deviation = 3, minimum = 14 and maximum = 80.
+-Uses the values from the arrays to create Students and add them to the array list of students.  For each student, use the corresponding values in each 
+array to supply data for Student's constructor (that is, the first Student should have the GPA shonw in the first value of the gpa array, etc.)
+-Prints data on each student in the list using Student.toString();
+-Supply all values passed as arguments to the Simulator from variables defined in your tester class.  For example, your tester class should
+have a variable called gpaStdDev, which represents the standard deviation for GPAs.  DO NOT hard-code these values in you method calls.  Pass, for example,
+gpaStdDev, not 3.3. 
+
+
+Here is the Simulator class, which is somewhat different from the one used in the lecture example:
+
+package simulator;
+
+import java.util.Random;
+
+public class Simulator {
+	
+	private static double[] nums;
+
+	public double[] getGaussianData(double mean, double std, int count, double min, double max) {
+		Random r = new Random();
+		nums = new double[count];
+		double randDoub;
+		for (int counter = 0; counter < nums.length; counter++){
+			randDoub = r.nextGaussian() * std + mean;
+			// it's pretty hard to set limits for the values in a good way, so here is a hacky way.
+			if(randDoub > max) randDoub = max;
+			if(randDoub < min) randDoub = min;
+			nums[counter] = randDoub;
+		}
+		return nums;
+	}
+	
+	public double[] getLinearData(int count, double min, double max) {
+	// it would be better to make sure max < min first, but I am not implementing this in this example
+		Random r = new Random();
+		nums = new double[count];
+		double randDoub;
+		for (int counter = 0; counter < nums.length; counter++){
+			randDoub = r.nextDouble() * (max - min) + min;
+			nums[counter] = randDoub;					
+		}
+		return nums;
+	}
+	
+	public boolean[] getBooleans(int count, double proportionTrue){
+		Random r = new Random();
+		boolean[] vals = new boolean[count];
+		
+		for(int counter = 0; counter < vals.length; counter++)
+			vals[counter]=(Math.abs(r.nextDouble())<= proportionTrue);
+		return vals;
+	}
+}
+
+
+Here is the Student class, which is not identical to any of the Student classes used in the lectures:
+
+package simulator;
+
+public class Student {
+	private double gpa;
+	private boolean isMale;
+	// a real application would track DOB and calculate age as needed!
+	private double age;
+
+	public Student(double gpa, boolean isMale, double age){
+		this.gpa = gpa;
+		this.isMale = isMale;
+		this.age = age;		
+	}
+	
+	public String toString(){
+		return "GPA: " + (double) Math.round(gpa * 100) / 100 + "; " + (isMale?"Male": "Female")+"; " + (double)Math.round(age * 10) / 10 + " years old";		
+	}
+}
+
+	--Driver class submitted to CSNS

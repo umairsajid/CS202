@@ -1,0 +1,58 @@
+case1: Want to fint the ! of 1
+n = 1
+if(intIn == 0){return 1;
+		}
+rMethod- 
+   return = 1 * n = 0
+   return = 1 * 1 = 1
+
+
+
+
+
+n = 5;
+
+1 + 2 + 3 + 4 + 5
+
+int endNum;
+endNum = n;
+
+if(n 
+
+return 1 + addition(
+
+
+
+
+
+
+//working recursive addition
+if(n == 0){
+return 0;
+}
+
+elseif(n == 1){
+return 1;
+}
+
+else{
+return n + addition(n-1);
+}
+
+//working recursive fibonacci
+if(n <= 2){
+return 1;
+}
+else{
+return r_fib(n-1) + r_fib(n-2);
+}
+
+
+1 1 2 3 5
+
+
+
+
+
+
+

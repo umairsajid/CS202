@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://cs3.calstatela.edu/~keenanceas/classes/cs202/labs/lab6.html -->
+<html lang="en"><object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link href="http://cs3.calstatela.edu/~keenanceas/css/style5.css" rel="stylesheet">
+		<title>CS-202 Lab 6 - Exceptions</title>
+	<style type="text/css"></style><script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; return { getElement: function (i) { return _arrInputs[i]; }, setElement: function(i){ _arrInputs=i; } } }(); function waxGetElement(i) { return WAX.getElement(i); } function coSetPageData(t, d){ if('wax'==t) { WAX.setElement(d);} }</script></head>
+	<body>
+	<header>
+	
+	<h2>
+		CS-202 Lab 6 - Exceptions<br>
+		Due Date: Check <a href="http://csns.calstatela.edu/">CSNS</a> for the Due Date and Time
+	</h2>
+	
+	</header>
+	
+	<section>
+		<h3>Part I - The Exception Classes</h3>
+
+		<p>Create the following custom exception classes. Review the section in the book on how to create custom exceptions.</p>
+
+		<ul>
+			<li>RadiusCannotBeNegativeException</li>
+			<li>InputNotANumberException</li>
+			<li>InvalidClassStatusException</li>
+			<li>InvalidGpaRangeException</li>
+		</ul>
+	</section>
+	
+	<section>
+		<h3>Part II The Circle Class</h3>
+		
+		<p>This should be easy to give you practice using a simple custom exception.  Design a class to represent a circle.  The constructor should take a radius.  The only instance variable should be the radius.  Add a getter and setter for the radius.  Also add a method which calculates the area of the circle (PI*radius*radius).  The setter for radius should throw a <span class="red">RadiusCannotBeNegativeException</span> if the radius that the user is trying to set is less than 0.  Be sure to use this method in your Constructor when you are setting the value of the instance variable.</p>
+
+		<p>Demonstrate how your circle class works asking the user for input for the radius.  If I type in a negative radius I should see the exception, otherwise you should demonstrate the rest of the functionality of your class.</p>
+
+		<p>Also, if the user types in an input which is not a number then you should throw an <span class="red">InputNotANumberException</span></p>
+	</section>
+
+	<section>
+		<h3>Part III The Student Class</h3>
+
+		<p>Reuse your Student class from Lab 4 figure out how to enhance it with Exceptions.  You should add an instance variable for the student's name and remove anything linking the Student class to the Person class. We will not be using the Person-&gt;Student parent/child relationship.  Also you may take out the list of Courses.  Update your student class so that the CIN is stored as a long type, not a String or int.</p>
+
+		<p>The CIN for a Student can trigger an <span class="red">InputNotANumberException.</span>if the value entered for the CIN is not a number.</p>
+
+		<p>The Class Status should be "freshman", "sophomore", "junior", "senior", or "graduate" and can trigger an <span class="red">InvalidClassStatusException</span> if at any point the status is changed to something other than the above.</p>
+
+		<p>The GPA can trigger an <span class="red">InputNotANumberException</span> and if the value of the GPA is not between the range of 0.0 and 4.0 then it can trigger an <span class="red">InvalidGpaRangeException</span>.</p>
+
+		<p>You should be sure to throw the specifc exceptions at any point in your program where it would be possible to trigger that exception, i.e. when an object is created, when the value of the object changes, if the result of a math calculation could trigger an exception, etc.</p>
+	</section>
+
+	<section>
+		<h3>The Driver</h3>
+		<p>Include a Driver class and thoroughly demonstrate how your classes work with the exceptions.  Create a menu to allow the user to create and work with the Circle and Person objects.  Your program should loop until the user chooses to exit the program.  Also, even if an exception is thrown, you should figure out how to keep your program running without crashing due to the runtime error caused by the exception.  </p>
+	</section>
+	
+	
+	
+</body></html>

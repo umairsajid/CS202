@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://cs3.calstatela.edu/~keenanceas/classes/cs202/labs/lab4.html -->
+<html lang="en"><object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link href="http://cs3.calstatela.edu/~keenanceas/css/style5.css" rel="stylesheet">
+		<title>CS-202 Lab 4 - Inheritance</title>
+	<style type="text/css"></style><script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; return { getElement: function (i) { return _arrInputs[i]; }, setElement: function(i){ _arrInputs=i; } } }(); function waxGetElement(i) { return WAX.getElement(i); } function coSetPageData(t, d){ if('wax'==t) { WAX.setElement(d);} }</script></head>
+	<body>
+	<header>
+	
+	<h2>
+		CS-202 Lab 4 - Inheritance<br>
+		Due Date: Check <a href="http://csns.calstatela.edu/">CSNS</a> for the Due Date and Time
+	</h2>
+	
+	</header>
+	<section>
+	<h2>General Directions</h2>
+	<ul>
+		<li>Use proper naming conventions for all Contructors, Variables, Datatypes, Methods, Classes otherwise points will be deducted from your grade.</li>
+		<li>All input and output must be shown through JOptionPane (except where allowed).  Console input and output will result in a deduction from the grade.</li>
+		<li>From now on it will be assumed that each class you create will have private instance variables and any necessary getters and setters.  I will no longer explictly ask you to create these.  </li>
+		<li>Be sure to implement toString() for each class.</li>
+	</ul>
+	</section>
+	
+	<section>
+		<h3>The Person Class</h3>
+		<p>A Person has a name, phone number, Address (represented by an object), and email address.  This will be a super class.</p>
+	</section>
+
+	<section>
+		<h3>The Student Class</h3>
+		<p>Student is a subclass of Person.  A student has CIN number, a class status (freshman, senior, graduate...etc.), a GPA, and a class schedule represented by an ArrayList of Courses.  The GPA for each student should be calculated using the formula on this <a href="http://web.williams.edu/admin/registrar/records/gpa.html">website.</a> The individual grades will come from the student's current grade in their list of Courses.  The GPA should always be current and updated if the grade in a course changes.</p>
+	</section>
+	
+	<section>
+		<h3>The Faculty Class</h3>
+		<p>Faculty is a subclass of Person.  A Faculty has an employee id number, office hours (can be a list of times), an office location, and an ArrayList of Courses they are teaching.</p>
+	</section>
+	
+	<section>
+		<h3>The Address Class</h3>
+		<p>An address has a street number, street name, apartment number (optional), city, state, zip code.</p>
+	</section>
+	
+	<section>
+		<h3>The Course Class</h3>
+		<p>A course has a course number (EE-132), a course title (Intro to Electrical Engineering), a class meeting time, a room number, and a current grade.  The current grade will be populated with a letter grade ranging from A+ ~ E if the Course is associated with a Student.  This letter grade must be used to dynamically compute the GPA for a student.  The current grade will be blank if the Course is associated with a Faculty.</p>
+	</section>
+	
+	<section>
+		<h3>Other Features to Provide</h3>
+		<p>Your program should provide a way to create Faculty and Students given user input.  Your program should keep track of all Faculty and Student objects created.  You should provide a way to remove a Faculty or Student based on the employee id or CIN.</p>
+		
+		<p>When you ask the user to create a Faculty or Student object you also need to allow them to create Courses to add to the object's list of courses.  You should also provide a way to update or change the grade of a student in a specific Course given the CIN and course number.  If the grade is changed then the GPA of the student should be updated to reflect the new grade.</p>
+		
+		<p>You should also provide a way to add and remove a Course object from the list of Courses in either a Student or Employee.  Courses should be removed given then Student or Employee id number and the course number.</p>
+		
+		<p>Provide a way for the User to print the information of all the Faculty and Student objects created.  Also provide a way to print the information of an individual Faculty or Student given an employee or CIN number.  When printing the output of either a Student or Faculty, this should include ALL information stored in private instance variables (yes this means the Courses ArrayList and the Address objects) This is the only output you are allowed to display using the console since the output can get quite long.  It should be formatted in a nice display and should not be a jumbled mess.  If the output is hard to interpret, points will be deducted.</p>
+		
+		<p>Your program should also provide an option to generate some test Faculty and Students.  So for example, if I choose to generate test data, then your program should create at least 3 Faculty objects, 3 Student objects, and 3 Course objects per Faculty or Student object. Then I should be able to add or remove Faculty or Students to or from this generated test data.</p>
+		
+		<p>Every aspect of the program must be thoroughly demonstrated.</p>
+	</section>
+	
+	
+	
+</body></html>

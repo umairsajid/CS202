@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://cs3.calstatela.edu/~keenanceas/classes/cs202/labs/lab3.html -->
+<html lang="en"><object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link href="http://cs3.calstatela.edu/~keenanceas/css/style5.css" rel="stylesheet">
+		<title>CS-202 Lab 3 - Sorting Objects</title>
+	<style type="text/css"></style><script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; return { getElement: function (i) { return _arrInputs[i]; }, setElement: function(i){ _arrInputs=i; } } }(); function waxGetElement(i) { return WAX.getElement(i); } function coSetPageData(t, d){ if('wax'==t) { WAX.setElement(d);} }</script></head>
+	<body>
+	<header>
+	
+	<h2>
+		CS-202 Lab 3 - Sorting Objects<br>
+		Due Date: Check <a href="http://csns.calstatela.edu/">CSNS</a> for the Due Date and Time
+	</h2>
+	
+	</header>
+	
+	<section>
+
+		<h3>Part I - The Ellipsoid Class</h3>
+		<p>Create a Java Class called <code>Ellipsoid</code> which will have the following properties:</p>
+
+		<ul>
+			<li>
+				<b>public</b> Constructors:
+				<ul>
+					<li>
+						Create the necessary constructors to create an Ellipsoid object.
+					</li>
+				</ul>
+			</li>
+			<li>
+				<b>private</b> Fields:
+				<ul>
+					<li><code><b>double radius1</b></code></li>
+					<li><code><b>double radius2</b></code></li>
+					<li><code><b>double radius3</b></code></li>
+				</ul>
+			</li>
+			<li>
+				<b>public</b> Methods:
+				<ul>
+					<li>Getters and Setters (Accessors and Mutators) if you feel they are necessary</li>
+					<li><code>getArea()</code>: calculates the area of the Ellipsoid based on the following formula (4 / 3) x pi x radius1 x radius2 x radius3<br>NOTE: You should use Math.PI to calculate the value of PI otherwise your results may not compute correctly.</li>
+					
+				</ul>
+			</li>
+		</ul>
+
+		<h3>Part II - Sorting Algorithm 1</h3>
+		
+		<p>Implement a method with the following header:</p>
+		
+		<code>public static void sort1(ArrayList&lt;Ellipsoid&gt; list)</code>
+		
+		<p>This method should implement the following sorting algorithm:
+		
+</p><pre>starting from the <b>end</b> of the list:
+ 
+for each element in the list going backwards
+	find the minimum element of the list
+	exchange the minimum element with the current element
+NOTE: When finding the minimum, you should only search from your current position, to the beginning of the list.		
+</pre>
+
+<br>
+
+This method should take the given ArrayList and sort the <b>objects</b> inside based on the area of the object.  The method should keep track of how many comparisons have been made while sorting, as well as how many swaps were made while sorting.  Once the array is sorted, the method should display the number of comparisons, and the number of swaps.<br><br>
+
+<span class="red">You must write the sorting algorithm from scratch, you CANNOT use any built in Java sorting methods.  Doing so will result in a 0 for the lab assignment.</span>
+
+<p></p>
+
+
+		
+		
+		
+		
+		<h3>Part III - Sorting Algorithm 2</h3>
+		
+		<p>Implement a method with the following header:</p>
+		
+		<code>public static void sort2(ArrayList&lt;Ellipsoid&gt; list)</code>
+		
+		<p>This method should implement the following sorting algorithm:
+		
+</p><pre>starting from the <b>end</b> of the list:
+
+repeat until there are no more swaps
+	for each item in the list going backwards
+		if the item at (index - 1) is less than the item at the current index, swap them
+end repeat
+</pre>
+
+<br><br>
+
+This method should take the given ArrayList and sort the <b>objects</b> inside based on the area of the object.  The method should keep track of how many comparisons have been made while sorting, as well as how many swaps were made while sorting.  Once the array is sorted, the method should display the number of comparisons, and the number of swaps.<br><br>
+
+<span class="red">You must write the sorting algorithm from scratch, you CANNOT use any built in Java sorting methods.  Doing so will result in a 0 for the lab assignment.</span>
+
+<p></p>
+
+<h3>Part IV - The Tester (Driver) Class</h3>
+
+<p>You will need the following 3 files: <a href="http://cs3.calstatela.edu/~keenanceas/classes/cs202/labs/lab3input1.csv">Input 1</a> <a href="http://cs3.calstatela.edu/~keenanceas/classes/cs202/labs/lab3input2.csv">Input 2</a> <a href="http://cs3.calstatela.edu/~keenanceas/classes/cs202/labs/lab3input3.csv">Input 3</a></p>
+
+<p>Write a tester class which uses the 3 input files.  The values in the files should be read into Ellipsoid objects and those objects stored in separate ArrayLists.  Sort each ArrayList using both sorting algorithms and display the number of comparisons and swaps for each sort of each list.  Also print out the contents of the first list (the one using input1) after it has been sorted both times. <br> <br>
+
+NOTE: Remember that ArrayLists are references...if you sort the list then it will be sorted when you go to use it later.  DO NOT try to sort a list which has already been sorted.  You will not get the correct results.  In otherwords, you need to maintain 6 separate ArrayLists (2 for each input list) so that you can sort the same list using a different sorting algorithm.
+</p>
+
+<h3>Sample Output:</h3>
+
+<p>UPDATE: These are the results I have so far.  Please let me know if you get something close to this.</p>
+
+<pre>Input 1 Results:
+	First Sorting Algorithm:
+		# of Swaps: 10
+		# of Comparisons: 45
+		Area = 2429287.6915344046
+		Area = 1918488.74724362
+		Area = 917336.2413613573
+		Area = 225444.02360126135
+		Area = 149493.28458031156
+		Area = 96806.02394550809
+		Area = 45955.56774995606
+		Area = 34652.47791151292
+		Area = 14725.783515125271
+		Area = 12101.619984796307
+	Second Sorting Algorithm:
+		# of Swaps: 21
+		# of Comparisons: 72
+		Area = 2429287.6915344046
+		Area = 1918488.74724362
+		Area = 917336.2413613573
+		Area = 225444.02360126135
+		Area = 149493.28458031156
+		Area = 96806.02394550809
+		Area = 45955.56774995606
+		Area = 34652.47791151292
+		Area = 14725.783515125271
+		Area = 12101.619984796307
+
+Input 2 Results:
+	First Sorting Algorithm:
+		# of Swaps: 100
+		# of Comparisons: 4950
+	Second Sorting Algorithm:
+		# of Swaps: 2483
+		# of Comparisons: 9504
+
+Input 3 Results:
+	First Sorting Algorithm:
+		# of Swaps: 1000
+		# of Comparisons: 499500
+	Second Sorting Algorithm:
+		# of Swaps: 248225
+		# of Comparisons: 936063
+
+</pre>		
+		
+		
+		
+	</section>
+	
+</body></html>

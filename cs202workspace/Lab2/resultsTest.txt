@@ -1,0 +1,56 @@
+Stock Name: APPL
+Date: 11/20/2012
+Opening: 483.86
+Closing: 480.23
+Highest: 484.6
+Lowest: 478.6
+Number of Stocks: 0
+
+Stock Name: AMZN
+Date: 8/20/2010
+Opening: 315.13
+Closing: 319.04
+Highest: 319.2
+Lowest: 312.62
+Number of Stocks: 0
+
+Stock Name: ATVI
+Date: 4/13/2000
+Opening: 16.63
+Closing: 16.88
+Highest: 16.95
+Lowest: 16.6
+Number of Stocks: 0
+
+Stock Name: GE
+Date: 10/31/2013
+Opening: 24.18
+Closing: 24.05
+Highest: 25.95
+Lowest: 20.19
+Number of Stocks: 0
+
+Stock Name: GOOG
+Date: 11/9/2003
+Opening: 875.0
+Closing: 872.35
+Highest: 880.62
+Lowest: 870.29
+Number of Stocks: 0
+
+Stock Name: MSFT
+Date: 5/24/2013
+Opening: 33.69
+Closing: 33.88
+Highest: 33.99
+Lowest: 33.62
+Number of Stocks: 0
+
+Stock Name: SNE
+Date: 2/1/1995
+Opening: 20.73
+Closing: 20.7
+Highest: 20.93
+Lowest: 20.69
+Number of Stocks: 0
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Circle.java&apos; to &apos;PracticeFinal/src&apos;&#x0D;&#x0A;- Original project: &apos;Lab6&apos;&#x0D;&#x0A;- Destination element: &apos;PracticeFinal/src&apos;&#x0D;&#x0A;- Original element: &apos;labFiles.Circle.java&apos;" description="Copy compilation unit" destination="=PracticeFinal/src" element1="/src&lt;labFiles{Circle.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1386573463286" units="1" version="1.0"/>
+</session>

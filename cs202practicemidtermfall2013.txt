@@ -1,0 +1,276 @@
+CS 202 PRACTICE Midterm, Fall 2013
+This practice exam will be ungraded, but you should try to complete it in 3 hours, the time you will have for the actual exam.
+
+
+Section 1, Short Answers 
+3 points each
+
+Give a complete answer to each question.  The length of your answer will vary from question to question, but should
+never be more than a few sentences or a few lines of code.
+
+
+1. Java was created by developers who wanted an easier-to-use alternative to another widely-used programming language.  What language was that?
+	--C
+
+2. Suppose you write a program that relies on the ratio of miles to kilometers for many calculations.  Why should you make this value a final?
+	--Yes
+3. Answer the following base 2 arithmetic problem:
+
+ 1110
++1001
+------
+11000
+
+
+4. Consider the following code:
+	double d1 = 5/11;
+	double d2 = 5;
+	double d3 = 11;
+	double d4 = d2/d3;
+	System.out.println(d1 == d4);
+
+The output from this code is "false."  What went wrong?
+
+5. Write a method that implements the following pseudocode.  Do not copy any code from any source.
+
+function factorial is:
+	input: integer n such that n >= 0
+	output: [n × (n-1) × (n-2) × … × 1] 
+	Iterative algorithm
+
+	1. create new variable called running_total with a value of 1 
+	2. begin loop
+		a. if n is 0, exit loop 
+		b. set running_total to (running_total × n) 
+		c. decrement n 
+		d. repeat loop 
+	3. return running_total 
+	end 
+
+	
+6. Consider this code:
+	
+	private static int myInt;
+	
+	public static void main(String args[]) {
+		myInt = 5;
+		change(5);
+		System.out.println(myInt);
+	}
+	
+	public static void change(int myInt){
+		myInt = 6;		
+	}
+	
+Does change() affect the value myInt has when the last line of main() is reached?  Why or why not?
+	--It does not affect the value of myInt because it is initiated as an instance varable.
+
+7. Consider the class Goose:
+
+public class Goose {
+	private double weightInKg;
+	
+	// place where the goose spends the summer, eg Alaska
+	private String summerLocation;
+	
+	// place where the goose spends the winter, eg California
+	private String winterLocation;
+	
+	// getters and setters, etc. omitted
+}
+
+Write a reasonable equals() method for this class, with a correct method signature.
+
+8. Why is the method main(String[] args) always static?
+
+9. Suppose you needed to write a class to represent hats.  Describe two instance variables you would use in the class and one reasonable subclass.	
+
+10. Consider the example from lecture 3 involving American Football scores.  Why doesn't the FootballScore class have a public method that
+increments the score by 0.5 points?
+
+11. Why are getters public?
+
+12. 
+a. Write a no-argument constructor for a class called Table, which does nothing but construct an instance of Table.  
+b. Under what circumstances do you need to actually write code like this?
+
+
+13. Consider this code:
+
+public class Goose extends Waterfowl{
+	private double weightInKg;
+
+	public void setWeightInKg(double weightInKg){
+		this.weightInKg = weightInKg;		
+	}	
+}
+
+What would the setWeightInKg method do if we had omitted the keyword "this"?
+
+14. Consider the definitions of "abstract" given in lecture 3.  Why was this particular term chosen to describe abstract methods?
+	
+	
+The next three questions refer to the following hierarchy of classes
+		
+					Structure
+				/				\
+	Building					HuntingBlind
+	/	\						/		\
+House	 Office Building	DuckBlind	DeerBlind			
+
+
+Building and HuntingBlind are subclasses of Structure, and they are each shown above their respective subclasses. All the 
+structures your application will ever need to deal with are either houses, office buildings, duck blinds, or deer blinds.  
+
+15. Which of the classes above should be abstract?
+
+16. Suppose you are using strictly inheritance without Java interfaces.  In which class would you write the code for the method paint(), which 
+is not applied to hunting blinds?  
+
+17. Again suppose you are using strictly inheritance without Java interfaces. How would you handle the method salvage(), which breaks the structure 
+down into recyclable materials and trash, and which must be present for every structure but will work differently for different structures?
+	
+18. Binary search works well in cases in which we will search the data many times for each time that we change it.  Why is this?
+ 
+19. Consider this code, which is different from the code for the classs Motorcycle used in the lecture notes:
+
+public class Motorcycle extends Vehicle{
+	public Motorcycle(String manufacturerIn, double weightInKgIn, double speedinKphIn){
+		manufacturer=manufacturerIn;
+		weightInKg = weightInKgIn;
+		speedInKph = speedInKphIn; 	
+	}
+	
+	@Override
+	protected void accelerate(double speedIncrement) {
+		speedInKph += speedIncrement;
+	}
+}
+
+How can we tell	*without* considering the class signature (that is, *without* looking at the first line, "public class Motorcycle extends Vehicle {") 
+that accelerate() implements a method declared in a superclass, rather than in an interface?
+	
+20. Consider the Simulator/Grader example in lecture 7.  Why is it a good idea to put everything specific to grading
+in another class from the code that generates the random numbers?	
+	
+	
+	
+Section 2: One-Paragraph Answer, 10 points
+
+Answer the question in one well-constructed paragraph.  A well-constructed paragraph contains an introductory sentence making your main 
+point, two to five sentences supporting your thesis with specific examples or arguments, and a concluding sentence.
+
+Write your own paragraph.  Do not copy any text from any source.
+
+Question:
+
+21. Most programming languages are either compiled or interpreted.  Java uses a two-step system in which source code is compiled to 
+byte code, which is then used as input to the Java Virtual Machine at runtime.  What are the main benefits and drawbacks of this 
+procedure?
+
+
+Section 3: Coding Question, 30 points
+Write a Java application that meets the following specifications.  Make sure your application compiles and runs correctly.  Turn in the
+.java files in the same CSNS link as the rest of the exam.
+
+22. This application tracks students' grades and calculates their GPAs. Create a package called "gpa" and copy the following two classes into the package.
+
+
+package gpa;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SchoolRecord {
+
+	private List<Course> courses;
+	private String studentName;
+
+	public SchoolRecord(String studentName) {
+		courses = new ArrayList<Course>();
+		this.studentName = studentName;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void addCourse(String courseName, int units, double grade) {
+		Course course = new Course(courseName, units, grade);
+		courses.add(course);
+	}
+
+	public double getGPA() {
+		double sum = 0;
+		int totalUnits = 0;
+		int currUnits = 0;
+		for (Course c : courses) {
+			currUnits = c.getUnits();
+			sum += c.getGrade() * currUnits;
+			totalUnits += currUnits;
+		}
+		return sum / totalUnits;
+	}
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public String toString() {
+		return studentName + " has a GPA of " + getGPA();
+	}
+}
+
+
+package gpa;
+
+public class Course {
+	private String name;
+	private int units;
+	private double grade;
+
+	public Course(String nameIn, int unitsIn, double gradeIn) {
+		name = nameIn;
+		units = unitsIn;
+		grade = gradeIn;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public int getUnits() {
+		return units;
+	}
+
+	public double getGrade() {
+		return grade;
+	}
+
+	public String toString() {
+		return "Course Name: " + name + "; Units: " + units + "; Grade: "
+				+ grade;
+
+	}
+
+}
+
+Note that GPAs are calculated using a system in which an A is worth 4.0, an A- is 3.7, a B+ is 3.3, a B is 3.0, an B- is 2.7, etc.
+
+Write a driver or tester class that does the following:
+
+-creates an array list (not an array) of SchoolRecords
+-creates school records for the following two students and adds them to the list:
+	a) Fred received a 1.7 in Geology 101, which is a 4-unit course.  He also received a 3.7 in Adevanced Rock Climbing, which is
+	a 1-unit course.
+	b) Wilma received a 4.0 in Chemistry 101, which is a 4 unit course, and a 3.0 in Automotive Engineering 203, which is a 3 unit course
+-displays information on each SchoolRecord using a loop which calls the toString() method of each SchoolRecord in the list
+-displays information on each course that each student has taken using a loop that calls appropriate methods from SchoolRecord and Course.  Hint: 
+you can get this information for a particular student in a list by using one of the methods in SchoolRecord.
+This part of the output should look like this:
+Fred received a 1.7 in Geology 101
+Fred received a 3.7 in Advanced Rock Climbing
+Wilma received a 4.0 in Chemistry 201
+Wilma received a 3.0 in Automotive Engineering 203
+ 
+Write your code so that it would work correctly for any number of SchoolRecords and Courses.

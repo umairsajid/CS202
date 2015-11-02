@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://cs3.calstatela.edu/~keenanceas/classes/cs202/labs/lab7.html -->
+<html lang="en"><object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link href="http://cs3.calstatela.edu/~keenanceas/css/style5.css" rel="stylesheet">
+		<title>CS-202 Lab 7 - GUI Programming - Connect Four</title>
+	<style type="text/css"></style><script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; return { getElement: function (i) { return _arrInputs[i]; }, setElement: function(i){ _arrInputs=i; } } }(); function waxGetElement(i) { return WAX.getElement(i); } function coSetPageData(t, d){ if('wax'==t) { WAX.setElement(d);} }</script></head>
+	<body>
+	<header>
+	
+	<h2>
+		CS-202 Lab 7 - GUI Programming - Connect Four<br>
+		Due Date: Check <a href="http://csns.calstatela.edu/">CSNS</a> for the Due Date and Time
+	</h2>
+	
+	</header>
+	
+	<section>
+		<h3>Connect Four with a GUI</h3>
+
+		<p>For this lab you will be creating a variation of the popular board game Connect Four. Connect Four (also known as Captain's Mistress, Four Up, Plot Four, Find Four, Four in a Row and Four in a Line) is a two-player game in which the players first choose a color and then take turns dropping colored discs from the top into a seven-column, six-row vertically suspended grid. The pieces fall straight down, occupying the next available space within the column. The object of the game is to connect four of one's own discs of the same color next to each other vertically, horizontally, or diagonally before your opponent. There are many variations on the board size, the most commonly used being 7x6. The game was first sold under the famous Connect Four trademark by Milton Bradley in February 1974.</p>
+
+		<p>You may try out an online version of the game <a href="http://www.agame.com/game/connect-four">here</a></p>
+
+		<p>Your task is to implement a simplified version of the connect four game.  Your game does not have to simulate allowing the user to "drop" pieces from the top of the playing board.</p>
+
+		<p>Your version must implement the following:</p>
+		<ul>
+			<li>NOTE: You may <span class="red">NOT</span> use JOptionPane or the console for input or output.  Everything must be done through a GUI which you will create.</li>
+			<li>Give your user the option of playing either a one player game or a two player game.
+				<ul>
+					<li>In a one player game, the user will play against the computer.</li>
+					<li>In a two player game, the user will play against another human player.</li>
+				</ul>
+			</li>
+			<li>Give your user(s) the option of choosing which color they want for their playing pieces.
+				<ul>
+					<li>You should allow the user to choose between a minimum of four color options.</li>
+					<li>In a one player game the user can choose their color, and the computer will choose a random color.</li>
+					<li>In a two player game both users can choose their colors.</li>
+					<li>Both players <b>cannot</b> choose the same color.</li>
+				</ul>
+			</li>
+			<li>Allow players to take turns placing their pieces on the grid.  Since you do not have to "drop" the pieces from the top of the grid a piece can only be placed in a position under the following conditions.
+				<ul>
+					<li>Pieces can be placed in the bottom row of the grid without any issues.</li>
+					<li>Pieces can only be placed in a position if there exists another piece in the space directly below the position.</li>
+					<li>Pieces cannot be removed or changed once placed.</li>
+					<li>Two pieces cannot occupy the same position and a piece that is already placed cannot be replaced by another player.</li>
+				</ul>	
+			</li>
+			<li>The game will continue until all the positions have been filled (this is a tie) or until one of the players has four pieces of their color in a row (horizontally, vertically, or diagonally).</li>
+			<li>Be creative with this assignment.  This is your chance to show off what you have learned this quarter.  More points will be awarded to people who meet all the the requirements and who show a well designed and aesthetically pleasing user interface.  Good luck!</li>
+		</ul>		
+
+		
+	
+	
+	
+</section></body></html>

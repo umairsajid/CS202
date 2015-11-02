@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://cs3.calstatela.edu/~keenanceas/classes/cs202/labs/lab5.html -->
+<html lang="en"><object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 0px; height: 0px; display: block;"></object><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<link href="http://cs3.calstatela.edu/~keenanceas/css/style5.css" rel="stylesheet">
+		<title>CS-202 Lab 5 - Interfaces and JUnit Testing</title>
+	<style type="text/css"></style><script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; return { getElement: function (i) { return _arrInputs[i]; }, setElement: function(i){ _arrInputs=i; } } }(); function waxGetElement(i) { return WAX.getElement(i); } function coSetPageData(t, d){ if('wax'==t) { WAX.setElement(d);} }</script></head>
+	<body>
+	<header>
+	
+	<h2>
+		CS-202 Lab 5 - Interfaces and JUnit Testing<br>
+		Due Date: Check <a href="http://csns.calstatela.edu/">CSNS</a> for the Due Date and Time
+	</h2>
+	
+	</header>
+	
+	<section>
+		<h3>The MyMath Interface</h3>
+		<ul>
+			<li>Download the following interface and use it as a part of your program: <a href="http://cs3.calstatela.edu/~keenanceas/classes/cs202/labs/MyMath.java">MyMath</a></li>
+			<li>You may not alter the interface in any way, shape, or form. No credit will be given if the interface is altered.</li>
+			<li>You will create two classes one called MyFraction and one called MySet.  Each of these classes must implement the above interface.  When you implement the interface you must use the correct "generic" for the class which implements the interface:<br>
+			<code>implements MyMath&lt;MyFraction&gt;</code> for the MyFraction class<br>
+			<code>implements MyMath&lt;MySet&gt;</code> for the MySet class</li>
+		</ul>
+	</section>
+	
+	<section>
+		<h3>The MyFraction Class</h3>
+		<p>This class will be used to represent a fraction.  This class should have three private instance variable, one for the numerator, one for the denominator, and one to hold the sign (+ or -) of the fraction.  The sign must be stored as the character + or -.  You should include a constructor which creates a MyFraction object from a given numerator, denominator and sign.  The numerator and denominator should always be positive and the sign of the entire fraction should be determined by the value of the sign instance variable.</p>
+		
+		<p>MyFraction should also implement the methods found in the MyMath interface.  If you don't remember how to perform these math operations on fractions the review <a href="http://en.wikipedia.org/wiki/Fractions#Arithmetic_with_fractions">here</a>
+			</p><ul>
+				<li><code>add(MyFraction o) </code>  This should return a new MyFraction object which is the sum of two MyFraction objects.</li>
+				<li><code>subtract(MyFraction o) </code>  This should return a new MyFraction object which is the difference of two MyFraction objects.</li>
+				<li><code>multiply(MyFraction o) </code>  This should return a new MyFraction object which is the product of two MyFraction objects.</li>
+				<li><code>divide(MyFraction o) </code>  This should return a new MyFraction object which is the quotient of two MyFraction objects.</li>
+			</ul>
+		NOTE: Remember to deal with positive and negative fractions.  Fractions where either the numerator or denominator are negative means the entire fraction is negative.  Fractions where both the numerator and denominator are negative are positive.  Keep this in mind when doing all math calculations.  	
+		<p></p>
+		
+		<p>
+			You should also implement toString to print a MyFraction object.  The output of a fraction should look like the following examples.  Notice that when a fraction is positive no sign appears, and when the fraction is negative the sign appears on the left of the numerator.<br>
+</p><pre>	-1/2
+	5/2
+</pre>			
+			
+			
+		<p></p>
+		
+	</section>
+	
+	<section>
+		<h3>The MySet Class</h3>
+		<p>NOTE: Java has a built in Set class.  You are NOT allowed to use this class or any of the methods available in it.  If you do it will be an automatic 0 for the entire lab.  Also, you may not use any of the built in java Collection classes inside of your MySet class.  This means no ArrayLists, Lists, Maps, etc.</p>
+		
+		<p>A set is a collection of items where each item is unique.  You will implement a simplified version of the Java Set class.  Your MySet class should have a private instance variable which is a regular integer Java Array.  A MySet object can be constructed by passing a Java array to it's constructor.  The constructor of the MySet class should take the given array and create an array of integers where each value is unique (as per the definition of a set). In other words, if the user creates a MySet object from an array with duplicate values, then your constructor must strip out any duplicates and only keep unique values in the set.  This array will be the one which is stored in the instance variable of your MySet class.  NOTE: Remember that arrays are fixed in size, so you will always have to account for the fact that new sets may have more or less values than what an array has space for.  You should shrink or expand your internal array accordingly.</p>
+		
+		<p>MySet should also implement the methods found in the MyMath interface.  NOTE: Don't get hung up on the name of the methods even if the name doesn't seem to intuitively relate to what the method actually does.  Just use everything as is and follow the directions carefully.
+			</p><ul>
+				<li><code>add(MySet o) </code>  This should return a new MySet object which is the union of two MySet objects. The Union of a Set can be reviewed <a href="http://en.wikipedia.org/wiki/Union_%28set_theory%29">here</a></li>
+				<li><code>subtract(MySet o) </code>This should return a new MySet object which is the intersection of two MySet objects.  The Intersection can be reviewed <a href="http://en.wikipedia.org/wiki/Intersection_%28set_theory%29">here</a></li>
+				<li><code>multiply(MySet o) </code>  This should return a new MySet object which is the Symmetric Difference of two MySet objects.  The Symmetric Difference can be reviewed <a href="http://en.wikipedia.org/wiki/Symmetric_difference">here</a></li>
+				<li><code>divide(MySet o) </code>  This should return a new MySet object which is the difference (or relative compliment) between the two sets.  The Difference (Relative Compliment) of Sets can be reviewed <a href="http://en.wikipedia.org/wiki/Set_difference#Relative_complement">here</a></li>
+			</ul>	
+		<p></p>
+		
+		<p>You should also implement toString to print your MySet objects.</p>
+	</section>
+	
+	<section>
+		<h3>The JUnit Testers</h3>
+		
+		<p>Each class should have an associated JUnit Tester class which <b>exhaustively tests every aspect of the classes.</b>All instance variables should be tested.  All constructors should be tested, and all methods should be tested. Any aspect of a class which is not tested will result in a deduction in points.  Refer to the lecture slides and examples on how to do this.</p>
+	</section>
+	
+	<section>
+		<h3>The Driver</h3>
+		<p>Include a Driver class which creates several objects of MySet and MyFraction and thoroughly tests every aspect of your programs.  Again, deductions will be made for things which aren't demonstrated.</p>
+	</section>
+	
+	
+	
+</body></html>

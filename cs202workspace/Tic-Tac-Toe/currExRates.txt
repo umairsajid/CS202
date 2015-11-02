@@ -1,0 +1,196 @@
+ADF             0.19340                     5.17100     Andorran Franc
+ADP             0.00762                   131.16500     Andorran Peseta
+AED             0.27230                     3.67340     Utd. Arab Emir. Dirham
+AFN             0.01756                    57.15000     Afghanistan Afghani
+ALL             0.00922                   112.37900     Albanian Lek
+AMD             0.00245                   408.41000     Armenian Dram
+ANG             0.56180                     1.82000     NL Antillian Guilder
+AOA             0.01019                    98.41900     Angolan Kwanza
+AON             0.01019                    98.41900     Angolan New Kwanza
+ARS             0.11850                     8.48910     Argentine Peso
+ATS             0.09220                    10.84750     Austrian Schilling
+AUD             0.87270                     1.14610     Australian Dollar
+AWG             0.56180                     1.80000     Aruban Florin
+AZM             0.00026                  3926.00000     Azerbaijan Manat
+AZN             1.27570                     0.78490     Azerbaijan New Manat
+BAM             0.64870                     1.54180     Bosnian Mark
+BBD             0.50000                     2.00000     Barbados Dollar
+BDT             0.01314                    78.93960     Bangladeshi Taka
+BEF             0.03145                    31.80080     Belgian Franc
+BGN             0.64870                     1.54200     Bulgarian Lev
+BHD             2.67990                     0.38190     Bahraini Dinar
+BIF             0.00066                  1575.47000     Burundi Franc
+BMD             1.00000                     1.00000     Bermudian Dollar
+BND             0.79640                     1.29510     Brunei Dollar
+BOB             0.14770                     7.08540     Bolivian Boliviano
+BRL             0.41160                     2.43770     Brazilian Real
+BSD             1.00810                     1.00290     Bahamian Dollar
+BTN             0.01626                    61.54900     Bhutan Ngultrum
+BWP             0.10950                     9.38260     Botswana Pula
+BYR             0.00009                 10667.70000     Belarusian Ruble
+BZD             0.51000                     2.03960     Belize Dollar
+CAD             0.89630                     1.11590     Canadian Dollar
+CDF             0.00110                   943.00000     Congolese Franc
+CHF             1.05120                     0.95150     Swiss Franc
+CLP             0.00166                   602.23100     Chilean Peso
+CNY             0.16250                     6.15600     Chinese Yuan Renminbi
+COP             0.00050                  2056.02000     Colombian Peso
+CRC             0.00189                   551.18500     Costa Rican Colon
+CUC             1.00000                     1.00000     Cuban Convertible Peso
+CUP             0.04500                    23.14810     Cuban Peso
+CVE             0.01157                    86.96470     Cape Verde Escudo
+CYP             2.16760                     0.46140     Cyprus Pound
+CZK             0.04610                    21.71470     Czech Koruna
+DEM             0.64870                     1.54180     German Mark
+DJF             0.00565                   187.00000     Djibouti Franc
+DKK             0.17050                     5.86800     Danish Krone
+DOP             0.02313                    44.11500     Dominican R. Peso
+DZD             0.01220                    82.78910     Algerian Dinar
+ECS             0.00004                 25587.00000     Ecuador Sucre
+EEK             0.08108                    12.33450     Estonian Kroon
+EGP             0.14070                     7.22090     Egyptian Pound
+ESP             0.00762                   131.16500     Spanish Peseta
+ETB             0.05045                    20.21420     Ethiopian Birr
+EUR             1.26870                     0.78830     Euro
+FIM             0.21340                     4.68710     Finnish Markka
+FJD             0.52150                     1.93620     Fiji Dollar
+FKP             1.62410                     0.61580     Falkland Islands Pound
+FRF             0.19340                     5.17100     French Franc
+GBP             1.62410                     0.61580     British Pound
+GEL             0.57060                     1.75240     Georgian Lari
+GHC             0.00003                 33521.80000     Ghanaian Cedi
+GHS             0.30280                     3.35220     Ghanaian New Cedi
+GIP             1.62410                     0.61580     Gibraltar Pound
+GMD             0.02559                    40.11770     Gambian Dalasi
+GNF             0.00014                  7176.74000     Guinea Franc
+GRD             0.00372                   268.62000     Greek Drachma
+GTQ             0.13200                     7.89120     Guatemalan Quetzal
+GYD             0.00500                   200.01000     Guyanese Dollar
+HKD             0.12880                     7.76370     Hong Kong Dollar
+HNL             0.04826                    21.50890     Honduran Lempira
+HRK             0.16630                     6.01790     Croatian Kuna
+HTG             0.02284                    45.35150     Haitian Gourde
+HUF             0.00407                   246.18800     Hungarian Forint
+IDR             0.00008                 12195.10000     Indonesian Rupiah
+IEP             1.61090                     0.62090     Irish Punt
+ILS             0.27170                     3.68640     Israeli New Shekel
+INR             0.01626                    61.58780     Indian Rupee
+IQD             0.00087                  1181.22000     Iraqi Dinar
+IRR             0.00004                 26719.00000     Iranian Rial
+ISK             0.00832                   120.81000     Iceland Krona
+ITL             0.00066                  1526.40000     Italian Lira
+JMD             0.00898                   114.25900     Jamaican Dollar
+JOD             1.41460                     0.71190     Jordanian Dinar
+JPY             0.00914                   109.44700     Japanese Yen
+KES             0.01136                    90.35340     Kenyan Shilling
+KGS             0.01835                    54.54500     Kyrgyzstanian Som
+KHR             0.00025                  4158.77000     Cambodian Riel
+KMF             0.00258                   388.40000     Comoros Franc
+KPW             0.00741                   135.00000     North Korean Won
+KRW             0.00096                  1055.19000     South-Korean Won
+KWD             3.47670                     0.28860     Kuwaiti Dinar
+KYD             1.21730                     0.85300     Cayman Islands Dollar
+KZT             0.00556                   184.73000     Kazakhstan Tenge
+LAK             0.00013                  8211.10000     Lao Kip
+LBP             0.00067                  1538.77000     Lebanese Pound
+LKR             0.00771                   131.46400     Sri Lanka Rupee
+LRD             0.01099                    92.00000     Liberian Dollar
+LSL             0.08882                    11.26877     Lesotho Loti
+LTL             0.36850                     2.72970     Lithuanian Litas
+LUF             0.03145                    31.80080     Luxembourg Franc
+LVL             1.80510                     0.55400     Latvian Lats
+LYD             0.82830                     1.25320     Libyan Dinar
+MAD             0.11560                     8.81720     Moroccan Dirham
+MDL             0.07088                    14.58170     Moldovan Leu
+MGA             0.00038                  2712.41000     Malagasy Ariary
+MGF             0.00011                  9150.46000     Malagasy Franc
+MKD             0.02080                    48.72330     Macedonian Denar
+MMK             0.00102                  1011.07000     Myanmar Kyat
+MNT             0.00055                  1835.00000     Mongolian Tugrik
+MOP             0.12710                     8.18540     Macau Pataca
+MRO             0.00348                   296.06000     Mauritanian Ouguiya
+MTL             2.95520                     0.33840     Maltese Lira
+MUR             0.03298                    32.46690     Mauritius Rupee
+MVR             0.06554                    15.55840     Maldive Rufiyaa
+MWK             0.00257                   399.12900     Malawi Kwacha
+MXN             0.07417                    13.48880     Mexican Peso
+MYR             0.30520                     3.27800     Malaysian Ringgit
+MZM             0.00003                 31000.00000     Mozambique Metical
+MZN             0.03257                    31.00000     Mozambique New Metical
+NAD             0.08882                    11.26877     Namibia Dollar
+NGN             0.00614                   166.01100     Nigerian Naira
+NIO             0.03859                    26.70240     Nicaraguan Cordoba Oro
+NLG             0.57570                     1.73720     Dutch Guilder
+NOK             0.15500                     6.45570     Norwegian Kroner
+NPR             0.01031                    99.71900     Nepalese Rupee
+NZD             0.77860                     1.28470     New Zealand Dollar
+OMR             2.60530                     0.38620     Omani Rial
+PAB             1.00000                     1.00000     Panamanian Balboa
+PEN             0.35110                     2.94980     Peruvian Nuevo Sol
+PGK             0.41340                     2.54500     Papua New Guinea Kina
+PHP             0.02224                    45.07100     Philippine Peso
+PKR             0.00981                   103.98700     Pakistan Rupee
+PLN             0.30350                     3.29770     Polish Zloty
+PTE             0.00633                   158.04400     Portuguese Escudo
+PYG             0.00023                  4593.96000     Paraguay Guarani
+QAR             0.27690                     3.68100     Qatari Rial
+ROL             0.00003                 34785.40000     Romanian Lei
+RON             0.28800                     3.47850     Romanian New Lei
+RSD             0.01071                    93.97660     Serbian Dinar
+RUB             0.02536                    39.46370     Russian Rouble
+RWF             0.00146                   702.83300     Rwandan Franc
+SAR             0.26660                     3.75130     Saudi Riyal
+SBD             0.13560                     7.42940     Solomon Islands Dollar
+SCR             0.08048                    13.99830     Seychelles Rupee
+SDD             0.00176                   575.40700     Sudanese Dinar
+SDG             0.17620                     5.75410     Sudanese Pound
+SDP             0.00044                  2272.30000     Sudanese Old Pound
+SEK             0.13780                     7.25890     Swedish Krona
+SGD             0.78470                     1.27480     Singapore Dollar
+SHP             1.62540                     0.61560     St. Helena Pound
+SIT             0.00529                   188.91300     Slovenian Tolar
+SKK             0.04211                    23.74890     Slovak Koruna
+SLL             0.00023                  4445.00000     Sierra Leone Leone
+SOS             0.00139                   820.35900     Somali Shilling
+SRD             0.30770                     3.30000     Suriname Dollar
+SRG             0.00031                  3300.00000     Suriname Guilder
+STD             0.00005                 19503.30000     Sao Tome/Principe Dobra
+SVC             0.11630                     8.98040     El Salvador Colon
+SYP             0.00626                   160.05000     Syrian Pound
+SZL             0.08882                    11.26877     Swaziland Lilangeni
+THB             0.03094                    32.42030     Thai Baht
+TJS             0.20030                     4.99240     Tajikistani Somoni
+TMM             0.00007                 14250.00000     Turkmenistan Manat
+TMT             0.35090                     2.85000     Turkmenistan New Manat
+TND             0.55850                     1.80030     Tunisian Dinar
+TOP             0.51510                     1.94650     Tonga Pa'anga
+TRL             0.00000               2274180.00000     Turkish Old Lira
+TRY             0.44000                     2.27420     Turkish Lira
+TTD             0.15990                     6.49150     Trinidad/Tobago Dollar
+TWD             0.03284                    30.47060     Taiwan Dollar
+TZS             0.00061                  1721.44000     Tanzanian Shilling
+UAH             0.07861                    13.19380     Ukraine Hryvnia
+UGX             0.00038                  2691.81000     Uganda Shilling
+USD             1.00000                     1.00000     US Dollar
+UYU             0.04117                    25.23380     Uruguayan Peso
+UZS             0.00042                  2395.00000     Uzbekistan Som
+VEB             0.00016                  6309.50000     Venezuelan Bolivar
+VEF             0.15900                     6.30950     Venezuelan Bolivar Fuerte
+VND             0.00005                 21525.80000     Vietnamese Dong
+VUV             0.01029                    99.20000     Vanuatu Vatu
+WST             0.44070                     2.36020     Samoan Tala
+XAF             0.00193                   517.21100     CFA Franc BEAC
+XAG            17.57120                     0.05700     Silver (oz.)
+XAU          1218.52000                     0.00082     Gold (oz.)
+XCD             0.37200                     2.71690     East Caribbean Dollar
+XEU             1.26870                     0.78830     ECU
+XOF             0.00193                   517.22100     CFA Franc BCEAO
+XPD           793.00000                     0.00128     Palladium (oz.)
+XPF             0.01064                    94.39530     CFP Franc
+XPT          1309.00000                     0.00077     Platinum (oz.)
+YER             0.00466                   215.35000     Yemeni Rial
+YUN             0.01071                    93.97660     Yugoslav Dinar
+ZAR             0.08882                    11.26880     South African Rand
+ZMK             0.00019                  5328.90000     Zambian Kwacha
+ZMW             0.16050                     6.30990     Zambian  Kwacha
+ZWD             0.00268                   376.30000     Zimbabwe Dollar
